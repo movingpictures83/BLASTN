@@ -1,0 +1,3 @@
+query	PAO1.ffn
+db	PA14.nuc.db
+outfmt	6

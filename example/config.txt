@@ -1,0 +1,2 @@
+Prefix plugins/BLASTN/example/
+Plugin BLASTN inputfile parameters.txt outputfile PAO1_PA14.out
