@@ -3,7 +3,7 @@
 # Input: TXT
 # Output: TXT
 # Tested with: PluMA 1.0, GCC 4.8.4
-# Dependency: BLAST 2.2.25
+# Dependency: BLAST 2.2.28
 
 PluMA plugin to BLAST a series of sequences (nucleotide format)
 against a database. 
