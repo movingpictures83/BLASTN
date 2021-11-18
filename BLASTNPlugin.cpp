@@ -32,8 +32,10 @@ myCommand += std::string(PluginManager::prefix()) + "/" + parameters["query"] + 
 myCommand += "-db";
 myCommand += " ";
 myCommand += std::string(PluginManager::prefix()) + "/" + parameters["db"] + " ";
+if (parameters.count("outfmt") != 0) {
 myCommand += "-outfmt";
 myCommand += " ";
+}
 myCommand += parameters["outfmt"] + " ";
 myCommand += ">";
 myCommand += " ";
