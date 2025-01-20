@@ -21,7 +21,6 @@ void BLASTNPlugin::run() {}
 void BLASTNPlugin::output(std::string file) {
  std::string outputfile = file;
  std::string myCommand = "";
-
  //blastp -query "+organism1+".faa -db "+organism2+".db -outfmt 6 > "+organism1+"_"+organism2+".txt"
  //makeblastdb -in PA14.txt -out PA14.db
  //blastn -db release10_bac_$i -query primers.txt -num_descriptions 50000 -num_alignments 50000 -evalue 50 -dust no -soft_masking false -word_size 8
@@ -32,7 +31,12 @@ myCommand += " ";
 myCommand += std::string(PluginManager::prefix()) + "/" + parameters["query"] + " ";
 myCommand += "-db";
 myCommand += " ";
-myCommand += std::string(PluginManager::prefix()) + "/" + parameters["db"] + " ";
+myCommand += parameters["db"] + " ";
+if (parameters.count("cullinglimit") != 0) {
+myCommand += "-culling_limit ";
+myCommand += " ";
+myCommand += parameters["cullinglimit"] + " ";
+}
 if (parameters.count("outfmt") != 0) {
 myCommand += "-outfmt";
 myCommand += " ";
@@ -47,6 +51,16 @@ if (parameters.count("num_alignments") != 0) {
 myCommand += "-num_alignments";
 myCommand += " ";
 myCommand += parameters["num_alignments"] + " ";
+}
+if (parameters.count("num_threads") != 0) {
+myCommand += "-num_threads";
+myCommand += " ";
+myCommand += parameters["num_threads"] + " ";
+}
+if (parameters.count("max_target_seqs") != 0) {
+myCommand += "-max_target_seqs";
+myCommand += " ";
+myCommand += parameters["max_target_seqs"] + " ";
 }
 if (parameters.count("evalue") != 0) {
 myCommand += "-evalue";
