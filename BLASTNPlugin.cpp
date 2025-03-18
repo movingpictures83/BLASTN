@@ -82,6 +82,11 @@ myCommand += "-word_size";
 myCommand += " ";
 myCommand += parameters["word_size"] + " ";
 }
+if (parameters.count("parallel") != 0) {
+myCommand += "-N";
+myCommand += " ";
+myCommand += parameters["parallel"] + " ";
+}
 myCommand += ">";
 myCommand += " ";
 myCommand += outputfile;
