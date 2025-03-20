@@ -83,7 +83,7 @@ myCommand += " ";
 myCommand += parameters["word_size"] + " ";
 }
 if (parameters.count("parallel") != 0) {
-myCommand += "-N";
+myCommand += "-num_threads";
 myCommand += " ";
 myCommand += parameters["parallel"] + " ";
 }
